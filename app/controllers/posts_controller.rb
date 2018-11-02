@@ -20,11 +20,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
-    # @post = Post.update(: => params[:])
+    @post = Post.find_by(id: params[:id])
+    @post = Post.update(title: => params[:title], :description => params[:description])
   end
 end
